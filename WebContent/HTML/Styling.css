@@ -1,0 +1,16 @@
+ul li a{
+border-right:1px solid;
+}
+.EmployeeView{
+	display:inline-block;
+}
+.EmployeeMaintain{
+	
+	padding:10px 10px;
+	margin-top:10px;
+	text-align:right;
+}
+.selectedrow::hover{
+	
+	background-color:green;
+}

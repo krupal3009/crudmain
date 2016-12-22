@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+ 
+<script src="test.js"></script>
+
+</head>
+
+<body ng-controller="myCtrl">
+	<p> Value of A={{valueA}}</p>
+	<input type="text" ng-model="valueA"/>
+	<p> Value of B={{valueB}}</p>
+	<input type="text" ng-model="valueB"/>
+	<p> sum is = {{sum}}</p>
+	<input type="button" ng-click="doSum()"/>
+
+
+
+
+
+</body>
+</html>

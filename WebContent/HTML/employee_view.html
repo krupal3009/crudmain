@@ -1,0 +1,52 @@
+<div class="container">
+	<div class="row">
+		<div  class="container EmployeeView col col-xs-6 col-md-6 col-lg-6">
+			<div class="table-responsive">          
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th ng-click="orderByField('id');reverseSort=!reverseSort">#ID</th>
+							<th ng-click="orderByField('fname');reverseSort=!reverseSort">FName</th>
+							<th ng-click="orderByField('mname');reverseSort=!reverseSort">MName</th>
+							<th ng-click="orderByField('lname');reverseSort=!reverseSort">LName</th>
+							<th ng-click="orderByField('dob');reverseSort=!reverseSort">DOB</th>
+							<th> Age</th>
+							<th></th>
+							<th></th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="user in employees |orderBy:myField:reverseSort|filter:searchText:exactSearch" ng-max="2">
+	 							<td>{{user.id}}</td>
+								<td>{{user.fname}}</td>
+								<td>{{user.mname}}</td>
+								<td>{{user.lname}}</td>
+								<td>{{user.dob}}</td>
+								<td>{{getAge(user.dob)}}</td>
+								 <td> <a ui-sref=".Edit" ng-click="passParam(user)" class="btn btn-primary" >Edit</a>
+									  <a ng-click="indelete($index)" class="btn btn-primary" >Delete</a>
+								</td>
+				
+							
+	 					</tr>
+					</tbody>
+				</table>
+				<span>Search Employee:</span>
+				<input type="text" ng-model="searchText.fname" placeholder="Search FName">
+				<input type="checkbox" ng-model="exactSearch"> Exact Search
+				
+			</div>
+		</div>
+		<div class="container EmployeeView col col-xs-6 col-md-6 col-lg-6">
+			<div ui-view>
+	
+			</div>
+			
+		</div>	
+	</div>
+	
+</div>
+		  		
+		  		
+		  		
